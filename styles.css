@@ -1,0 +1,251 @@
+:root {
+  --bg: #0f0f14;
+  --section-bg: #161622;
+  --text: #f1f1f1;
+  --accent: var(--accent)
+f;
+}
+
+body.light {
+  --bg: #f4f4f4;
+  --section-bg: #ffffff;
+  --text: #111;
+  --accent: #0077ff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  background-color: var(--section-bg);
+  position: sticky;
+  top: 0;
+}
+.nav-links {
+  list-style: none;
+  transform: translateY(-200%);
+}
+.nav-links li {
+  margin-left: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: #00f5ff;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #00f5ff;
+  transition: 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+.hero h1 {
+  font-size: 3rem;
+}
+.accent {
+  color: #00f5ff;
+}
+.hero h2 {
+  margin: 10px 0;
+  color: #9ca3af;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.primary {
+  background: #00f5ff;
+  color: #000;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0,245,255,0.6);
+}
+
+.secondary {
+  border: 1px solid #00f5ff;
+  color: #00f5ff;
+}
+
+.secondary:hover {
+  background: #00f5ff;
+  color: #000;
+}
+.section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00f5ff;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #161622;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px rgba(0,245,255,0.3);
+}
+
+.tech-stack span {
+  background: #0f0f14;
+  border: 1px solid #00f5ff;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 15px;
+  margin-right: 5px;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill {
+  background: #161622;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #00f5ff;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #161622;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal iframe {
+  flex: 1;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.close-btn {
+  align-self: flex-end;
+  font-size: 1.5rem;
+  color: #00f5ff;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #161622;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transform: translateY(-200%);
+    transition: 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+}
