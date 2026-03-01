@@ -146,17 +146,27 @@ body {
 }
 
 .project-card {
-  background: #161622;
   padding: 20px;
-  border-radius: 10px;
-  transition: 0.4s ease;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  transition: transform 0.2s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 15px rgba(0,245,255,0.3);
+  transform: translateY(-3px);
 }
 
+.project-links {
+  margin-top: 15px;
+}
+
+.project-links a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #111;
+}
 .tech-stack span {
   background: #0f0f14;
   border: 1px solid #00f5ff;
